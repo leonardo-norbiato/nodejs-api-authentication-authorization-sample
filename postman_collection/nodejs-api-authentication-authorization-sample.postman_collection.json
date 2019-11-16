@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "8c0bdd67-af3c-4759-95a2-d66208f81ffe",
+		"name": "nodejs-api-authentication-authorization-sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"leonardo.norbiato\",\n    \"password\": \"S3cr#t123!@#\",\n    \"email\": \"leonardo.norbiato@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNmNjk4ZGRhYjNlZjRiOTViMzg0ZDMiLCJleHAiOjE1NzM4Nzc3OTAsInJiYWMiOlt7Il9pZCI6IjVkY2Y2MWYwZjFkOTAzNDM5NjNiMjQxMiIsInByb2R1Y3QiOiJUZXN0ZUF1dGhvcml6YXRpb24iLCJhcGxpY2F0aW9uIjoiQXBsaWNhY2FvVGVzdGUiLCJyb2xlcyI6WyJ1c3VhcmlvL29wZXJhZG9yIl19XSwiaWF0IjoxNTczODc0MTkwfQ.kFEPU0kUM6pwl9MR59H6bXe8j1lRmZI30L057BGVSPc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/current",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNmNWEzMzU5OTMwZTNiZGMyMzEwZDAiLCJleHAiOjE1NzM4NzM3MzEsInJiYWMiOltdLCJpYXQiOjE1NzM4NzAxMzF9.SbzXC6nHR4TzTsY4zPLGx0q5nFIKkjSGZCTUmq01bXk",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5dcf5a3359930e3bdc2310d0\",\n    \"rbac\": [\n        {\n            \"product\": \"TesteAuthorization\",\n            \"aplication\":\"AplicacaoTeste\",\n            \"roles\": [\n                \"usuario/operador\"\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"leonardo.norbiato\",\n\t\"password\": \"S3cr#t123!@#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Menu",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNmNjk4ZWRhYjNlZjRiOTViMzg0ZDUiLCJleHAiOjE1NzM4ODA3NjMsInJiYWMiOlt7Il9pZCI6IjVkY2Y2M2I0NzE5YWY3NDRjODVmZTIxOCIsInByb2R1Y3QiOiJUZXN0ZUF1dGhvcml6YXRpb24iLCJhcGxpY2F0aW9uIjoiQXBsaWNhY2FvVGVzdGUiLCJyb2xlcyI6WyJhZG1pbi9tZW51Il19XSwiaWF0IjoxNTczODc3MTYzfQ.zOhDwQVEc640cxAi9H8w1ReXNpbvNBfg_VrZFK67KkY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-api-context",
+								"value": "{\"aplication\":\"AplicacaoTeste\"}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/menu/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"menu",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

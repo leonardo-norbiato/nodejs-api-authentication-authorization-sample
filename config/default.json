@@ -1,0 +1,11 @@
+{
+  "secret": "secret2010",
+  "mongo":{
+      "server":"127.0.0.1",
+      "database":"nodejsauth",
+      "user":"",
+      "pass":"",
+      "collection":"config"
+  },
+  "product":"TesteAuthorization"
+}

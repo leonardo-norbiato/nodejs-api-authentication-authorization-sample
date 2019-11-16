@@ -1,0 +1,31 @@
+[
+    {
+        "role": "admin/menu",
+        "resource": "menu",
+        "action": "read",
+        "attributes": [
+            "root",
+            "admin"
+        ],
+        "condition": {
+            "Fn": "EQUALS",
+            "args": {
+                "aplication": "AplicacaoTeste"
+            }
+        }
+    },
+    {
+        "role": "usuario/operador",
+        "resource": "menu",
+        "action": "read",
+        "attributes": [
+            "root"
+        ],
+        "condition": {
+            "Fn": "EQUALS",
+            "args": {
+                "aplication": "AplicacaoTeste"
+            }
+        }
+    }
+]

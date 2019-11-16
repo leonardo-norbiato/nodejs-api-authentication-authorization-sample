@@ -1,0 +1,32 @@
+[
+    {
+        "username":"leonardo.norbiato",
+        "email":"leonardo.norbiato@gmail.com",
+        "password": "S3cr#t123!@#",
+        "rbac":[
+            {
+                "_id": "5dcf61f0f1d90343963b2412",
+                "product": "TesteAuthorization",
+                "aplication": "AplicacaoTeste",
+                "roles": [
+                    "usuario/operador"
+                ]
+            }
+        ]
+    },
+    {
+        "username":"lnorbiato",
+        "email":"leonardo@workinside.com.br",
+        "password": "S3cr#t123!@#",
+        "rbac":[
+            {
+                "_id": "5dcf63b4719af744c85fe218",
+                "product": "TesteAuthorization",
+                "aplication": "AplicacaoTeste",
+                "roles": [
+                    "admin/menu"
+                ]
+            }
+        ]
+    }
+]
