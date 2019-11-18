@@ -60,14 +60,23 @@ Após estes passos crie um diretório em seu computador e clone o repositório d
 
 ### Dependências usadas
 Nosso projeto precisará de vários pacotes npm e abaixo está a lista desses pacotes e uma breve explicação sobre o que cada um desses pacotes nos ajudará a alcançar.
+
 > **mongodb** - MongoDB é um software de banco de dados orientado a documentos, classificado como um programa de banco de dados NoSQL, o MongoDB usa documentos semelhantes a JSON.
+
 > **config** - Permite definir um conjunto de parâmetros padrões e estendê-los para diferentes ambientes de implantação usado neste projeto para recuperar configurações de acesso ao mongo, secredo para assinar o JWT e configurações do projeto.
+
 > **joi** - O joi permite que você descreva seus dados usando uma linguagem simples, intuitiva e legível, descrevemos nossos modelos de dados para validação de entrada dos dados, podendo ser extendido para atender a validação da saída de dados.
+
 > **express** - Uma estrutura node.js que facilita a criação de aplicativos da web.
+
 > **mongoose** - Uma ferramenta de modelagem de objetos projetada para funcionar em um ambiente assíncrono. Usaremos o mongoose para definir esquemas de banco de dados e interagir com o banco de dados Mongo.
+
 > **jsonwebtoken** - Uma implementação do JSON Web Token (JWT) que será usado para autenticação e autorização, podendo atender requisições assincronas e ou sincronas.
+
 > **bcrypt** - Isso nos ajudará a criar senhas de usuário com hash antes de armazená-las no banco de dados.
+
 > **role-acl** - Uma ferramenta para controle de acesso baseado em funções, atributos e condições para Node.js que permite mesclar as melhores características de dois mundos o RBAC e o ABAC, implementando os principios basicos do RBAC mas também se concentrando no recurso, atributos e condições de ação (ABAC - Attribute-based Access Control).
+
 
 Instale as dependências do projeto executando o comando **npm i** no diretório em que foi clonado o projeto. Para o MongoDB pode-se utilizar o mesmo conteinerizado utilizando a solução docker, este por sua vez depende do docker estar instalado em seu computador.
 
