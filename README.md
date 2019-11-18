@@ -101,75 +101,75 @@ Existem duas configurações de controle de acesso, sendo:
 ### Testes
 
 1. **Efetuar GET verificando os dados do usuário conectado a api**
-> **GET** em http://localhost:3000/api/users/current.\
+> **GET** em http://localhost:3000/api/users/current. \
 
-É esperado receber o retorno de Acesso Negado, pois esta requisição foi efetuada sem um JWT válido.\
+É esperado receber o retorno de Acesso Negado, pois esta requisição foi efetuada sem um JWT válido. \
  
 2. **Efetuar o POST fazendo o login do usuário, gerando um JWT válido:**
-> **POST** em http://localhost:3000/api/auth/login\
-> **body** -> JSON -> {"username":"leonardo.norbiato", "password": "S3cr#t123!@#"}\
+> **POST** em http://localhost:3000/api/auth/login \
+> **body** -> JSON -> {"username":"leonardo.norbiato", "password": "S3cr#t123!@#"} \
 
- É esperado receber o um JSON como retorno contendo o email do usuário, e no header do retorno um parâmetro chamado x-auth-token contendo o JWT do login, este deverá ser utilizado nas próximas requisições.\
+ É esperado receber o um JSON como retorno contendo o email do usuário, e no header do retorno um parâmetro chamado x-auth-token contendo o JWT do login, este deverá ser utilizado nas próximas requisições. \
 
 3. **Efetuar GET verificando os dados do usuário conectado.** 
 > **GET** em http://localhost:3000/api/users/current \
-> **Header** -> x-access-token ou Authorization contendo o JWT retornado no login.\
+> **Header** -> x-access-token ou Authorization contendo o JWT retornado no login. \
 
- É esperado receber um JSON contento todos os dados do usuário incluindo o nó que representa as funções do mesmo (rbac).\
+ É esperado receber um JSON contento todos os dados do usuário incluindo o nó que representa as funções do mesmo (rbac). \
 	
 4. **Efetuar o GET do menu do usuário informando o atributo admin.** 
 > **GET** em http://localhost:3000/api/users/menu/admin \
 > **Header** -> x-access-token ou Authorization contendo o JWT retornado no login. \
-> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste"}\
+> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste"} \
 
 Neste teste estamos efetuando uma chamada HTTP utilizando o Verbo GET na api "api/users/menu/" sendo o ultimo parâmetro o atributo do menu que desejamos receber (ou permissão ou os links), o x-api-context é utilizado para informar ao nosso motor de regras que o usuário está efetuando a chamada utilizando a aplicação AplicacaoTeste. \
-É esperado receber o retorno ERRO:Sem Menu para este usuário, informando que este usuário não tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste.\
+É esperado receber o retorno ERRO:Sem Menu para este usuário, informando que este usuário não tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste. \
 	
 5. **Efetuar o GET na api menu do usuário informando o atributo root.** 
 > **GET** em http://localhost:3000/api/users/menu/root \
 > **Header** -> x-access-token ou Authorization contendo o JWT retornado no login. \
-> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste"}\
+> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste"} \
 
 Neste teste estamos efetuando uma chamada HTTP utilizando o Verbo GET na api "api/users/menu/" sendo o ultimo parâmetro o atributo do menu que desejamos receber (ou permissão ou os links), o x-api-context é utilizado para informar ao nosso motor de regras que o usuário está efetuando a chamada utilizando a aplicação AplicacaoTeste. \
-É esperado receber o retorno SUCESSO- Tem Permissão, informando que este usuário tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste.\
+É esperado receber o retorno SUCESSO- Tem Permissão, informando que este usuário tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste. \
 	
 6. **Efetuar o POST fazendo outro Login, trocando para o usuario lnorbiato.**
 > **POST** em http://localhost:3000/api/auth/login \
-> **body** -> JSON -> {"username":"lnorbiato", "password": "S3cr#t123!@#"}\
+> **body** -> JSON -> {"username":"lnorbiato", "password": "S3cr#t123!@#"} \
 
-É esperado receber o um JSON como retorno contendo o e-mail do usuário, e no header do retorno um parâmetro chamado x-auth-token contendo o JWT do login, este deverá ser utilizado nas próximas requisições.\
+É esperado receber o um JSON como retorno contendo o e-mail do usuário, e no header do retorno um parâmetro chamado x-auth-token contendo o JWT do login, este deverá ser utilizado nas próximas requisições. \
 	
 7. **Efetuar GET verificando os dados do usuário conectado.** 
 > **GET** em http://localhost:3000/api/users/current \
 > **Header** -> x-access-token ou Authorization contendo o JWT retornado no login.\
  
 É esperado receber um JSON contento todos os dados do usuário incluindo o nó que representa as funções do mesmo (rbac). \
-Este por sua vez não tem em suas permissões o acesso ao atributo admin do menu, contendo apenas o acesso ao root.\
+Este por sua vez não tem em suas permissões o acesso ao atributo admin do menu, contendo apenas o acesso ao root. \
 	
 8. **Efetuar o GET do menu do usuário informando o atributo admin.** 
 > **GET** em http://localhost:3000/api/users/menu/admin \
 > **Header** -> x-access-token ou Authorization contendo o JWT retornado no login. \
-> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste"}\
+> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste"} \
 
 Neste teste estamos efetuando uma chamada HTTP utilizando o Verbo GET na api "api/users/menu/" sendo o ultimo parâmetro o atributo do menu que desejamos receber (ou permissão ou os links), o x-api-context é utilizado para informar ao nosso motor de regras que o usuário está efetuando a chamada utilizando a aplicação AplicacaoTeste. \
-É esperado receber o retorno SUCESSO- Tem Permissão, informando que este usuário não tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste.\
+É esperado receber o retorno SUCESSO- Tem Permissão, informando que este usuário não tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste. \
 	
 9. **Efetuar o GET na api menu do usuário informando o atributo root.** 
 > **GET** em http://localhost:3000/api/users/menu/root \
 > **Header** -> x-access-token ou Authorization contendo o JWT retornado no login. \
-> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste"}\
+> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste"} \
 
 Neste teste estamos efetuando uma chamada HTTP utilizando o Verbo GET na api "api/users/menu/" sendo o ultimo parâmetro o atributo do menu que desejamos receber (ou permissão ou os links), o x-api-context é utilizado para informar ao nosso motor de regras que o usuário está efetuando a chamada utilizando a aplicação AplicacaoTeste. \
-É esperado receber o retorno SUCESSO- Tem Permissão, informando que este usuário tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste.\
+É esperado receber o retorno SUCESSO- Tem Permissão, informando que este usuário tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste. \
 	 
 ###### Pode-se efetuar alterações como contexto da requisição afim de verificar se a POC está realmente levando em consideração o contexto informado.
 
 10. **Efetuar o GET na api menu do usuário informando o atributo root.** 
 > **GET** em http://localhost:3000/api/users/menu/root \
 > **Header** -> x-access-token ou Authorization contendo o JWT retornado no login. \
-> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste2"}\
+> **Header** -> x-api-context -> {"aplication":"AplicacaoTeste2"} \
 
-Neste teste estamos efetuando uma chamada HTTP utilizando o Verbo GET na api "api/users/menu/" sendo o ultimo parâmetro o atributo do menu que desejamos receber (ou permissão ou os links), o x-api-context é utilizado para informar ao nosso motor de regras que o usuário está efetuando a chamada utilizando a aplicação AplicacaoTeste2, sendo esta uma configuração que não foi configurada na aplicação.\
-É esperado receber o retorno ERRO:Sem Menu para este usuário, informando que este usuário não tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste.\
+Neste teste estamos efetuando uma chamada HTTP utilizando o Verbo GET na api "api/users/menu/" sendo o ultimo parâmetro o atributo do menu que desejamos receber (ou permissão ou os links), o x-api-context é utilizado para informar ao nosso motor de regras que o usuário está efetuando a chamada utilizando a aplicação AplicacaoTeste2, sendo esta uma configuração que não foi configurada na aplicação. \
+É esperado receber o retorno ERRO:Sem Menu para este usuário, informando que este usuário não tem acesso ao recurso menu, com o atributo admin, no contexto da aplicação AplicacaoTeste. \
 
 ##### Leonardo Norbiato
