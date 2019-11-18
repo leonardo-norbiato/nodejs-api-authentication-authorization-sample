@@ -22,41 +22,41 @@ Uma vez que a carga util é autentica, podemos as funções que o usuário tem d
 Para efetuarmos nossa prova de conceito criei uma solução que apresenta como unir o poder do JWT com uma solução de RBAC de forma simples e de fácil entendimento. 
 
 No momento da criação de nossa POC foi utilizado o NodeJs na versão v12.13.0 e o npm na versão 6.12.0. 
-Verifique se você instalou o Node.js no seu computador, caso contrário navegue para https://nodejs.org, faça o download e instale a versão mais recente. 
+Verifique se você instalou o Node.js no seu computador, caso contrário navegue para https://nodejs.org, faça o download e instale a versão mais recente.
 
 Após estes passos crie um diretório em seu computador e clone o repositório deste projeto, ele pode ser acessada através do github na seguinte url: https://github.com/leonardo-norbiato/nodejs-api-authentication-authorization-sample
 
 ### Estrutura do projeto
-.
-├── config
-│   └── default.json
-├── controllers
-│   ├── auth.controller.js
-│   └── user.controller.js
-├── middleware
-│   └── auth.js
-├── migration
-│   ├── data
-│   │   ├── roles.json
-│   │   └── users.json
-│   └── migration.js
-├── models
-│   ├── role.model.js
-│   └── user.model.js
-├── package.json
-├── package-lock.json
-├── postman_collection
-│   └── nodejs-api-authentication-authorization-sample.postman_collection.json
-├── routes
-│   └── index.js
-├── services
-│   └── role.service.js
-├── util
-|   ├── index.js
-|   └── token.js
-├── LICENSE
-├── index.js
-└── README.md
+.\
+├── config\
+│   └── default.json\
+├── controllers\
+│   ├── auth.controller.js\
+│   └── user.controller.js\
+├── middleware\
+│   └── auth.js\
+├── migration\
+│   ├── data\
+│   │   ├── roles.json\
+│   │   └── users.json\
+│   └── migration.js\
+├── models\
+│   ├── role.model.js\
+│   └── user.model.js\
+├── package.json\
+├── package-lock.json\
+├── postman_collection\
+│   └── nodejs-api-authentication-authorization-sample.postman_collection.json\
+├── routes\
+│   └── index.js\
+├── services\
+│   └── role.service.js\
+├── util\
+|   ├── index.js\
+|   └── token.js\
+├── LICENSE\
+├── index.js\
+└── README.md\
 
 ### Dependências usadas
 Nosso projeto precisará de vários pacotes npm e abaixo está a lista desses pacotes e uma breve explicação sobre o que cada um desses pacotes nos ajudará a alcançar.
