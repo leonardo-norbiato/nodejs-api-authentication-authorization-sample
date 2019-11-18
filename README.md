@@ -91,8 +91,8 @@ Após iniciar o servidor HTTP podemos efetuar nossa prova de conceito.
 **Contextualizando:**
 
 Existem dois usuários cadastrados (caso voce tenha executado o migration.js, para este teste é extremamente aconselhável executá-lo, após entendimento do conceito do teste poderá ser ajustado para o cenário que melhor lhe agrade.). 
-- **leonardo.norbiato **que tem em sua configuração de controle de acesso a função "usuario/operador". 
-- **lnorbiato **que tem em sua configuração de controle de acesso a função "admin/menu".
+- **leonardo.norbiato** que tem em sua configuração de controle de acesso a função "usuario/operador".
+- **lnorbiato** que tem em sua configuração de controle de acesso a função "admin/menu".
 
 Existem duas configurações de controle de acesso, sendo: 
 - **"usuario/operador"** que pode ter acesso ao recurso **"menu"** utilizando a ação **"read"** no contexto da aplicação **"AplicacaoTeste"**, com o atributo **"root"**. 
